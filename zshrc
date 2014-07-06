@@ -13,6 +13,7 @@ DEFAULT_USER="alouest"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rbmine="/opt/RubyMine-6.3.2/bin/rubymine.sh"
+alias subl="/opt/Sublime\ Text\ 2/sublime_text"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
