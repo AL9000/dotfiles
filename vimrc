@@ -7,7 +7,7 @@ set  shiftwidth =3
 set  softtabstop =3
 
 " indentation scripts
-filetype  indent plugin on
+" filetype  indent plugin on
 
 " mouse activation
 set  mouse =a
@@ -16,8 +16,8 @@ set  mouse =a
 set  showmatch
 
 " dictionnary and speeling
-set  spelllang =en,fr
-set  spell
-set  spellsuggest =5
+" set  spelllang =en,fr
+" set  spell
+" set  spellsuggest =5
 
 imap  <C-Space> <C-X><C-O>
