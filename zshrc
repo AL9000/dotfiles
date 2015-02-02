@@ -55,7 +55,7 @@ plugins=(git rails ruby heroku rvm vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/alouest/Documents/scripts"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/alouest/Documents/scripts:/home/alouest/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
