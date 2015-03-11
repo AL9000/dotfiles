@@ -10,7 +10,7 @@ ZSH_THEME="gnzh"
 DEFAULT_USER="alouest"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias apt-get="aptitude"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Uncomment the following line to use case-sensitive completion.
