@@ -1,16 +1,18 @@
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
+export JAVA_HOME=/opt/jdk
+export PATH=$PATH:/$JAVA_HOME/bin
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/alouest/.oh-my-zsh
+export ZSH=/home/alouest/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="gnzh"
+ZSH_THEME="wezm"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,3 +88,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sts="~/Softwares/sts-bundle/sts-3.8.2.RELEASE/STS"
+alias idea="~/Softwares/idea-IU-162.2032.8/bin/idea.sh"
+alias pycharm="~/Softwares/pycharm-2016.2.3/bin/pycharm.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/alouest/.sdkman"
+[[ -s "/home/alouest/.sdkman/bin/sdkman-init.sh" ]] && source "/home/alouest/.sdkman/bin/sdkman-init.sh"
