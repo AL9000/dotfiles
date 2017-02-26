@@ -5,39 +5,20 @@
   [[default]]
     background_darkness = 0.8
     background_image = None
+    login_shell = True
     background_type = transparent
     foreground_color = "#00ff00"
 [layouts]
   [[default]]
     [[[child0]]]
-      position = 0:24
+      position = 0:27
       type = Window
       order = 0
       parent = ""
-      size = 1366, 744
-    [[[child1]]]
-      position = 682
-      type = HPaned
+      size = 1359, 698
+    [[[terminal1]]]
+      profile = default
+      type = Terminal
       order = 0
       parent = child0
-    [[[child3]]]
-      position = 372
-      type = VPaned
-      order = 1
-      parent = child1
-    [[[terminal2]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child1
-    [[[terminal5]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child3
-    [[[terminal4]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child3
 [plugins]
