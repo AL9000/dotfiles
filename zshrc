@@ -1,8 +1,3 @@
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export JAVA_HOME=/opt/jdk
-export PATH=$PATH:/$JAVA_HOME/bin
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -56,7 +51,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant django virtualenvwrapper)
+plugins=(git django virtualenvwrapper mvn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,10 +83,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias sts="~/Softwares/sts-bundle/sts-3.8.2.RELEASE/STS"
+alias sts="~/Softwares/sts-bundle/sts-3.8.3.RELEASE/STS"
 alias idea="~/Softwares/idea-IU-162.2032.8/bin/idea.sh"
 alias pycharm="~/Softwares/pycharm-2016.2.3/bin/pycharm.sh"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/alouest/.sdkman"
-[[ -s "/home/alouest/.sdkman/bin/sdkman-init.sh" ]] && source "/home/alouest/.sdkman/bin/sdkman-init.sh"
+# Virtualenvs
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Java
+export JAVA_HOME=/opt/jdk/jdk1.8.0_121
+
+# Maven
+export MAVEN_HOME=$HOME/Softwares/apache-maven-3.3.9
+
+export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+
+# Fuck
+eval $(thefuck --alias)
