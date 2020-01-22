@@ -4,7 +4,7 @@
 red='\033[0;31m'
 blue='\033[0;34m'
 NC='\033[0m' # No Color
-programms="zsh terminator vim tree git curl gparted libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev"
+programms="zsh terminator vim tree git curl gparted" 
 
 cd ~
 echo -e ${blue}'apt update & upgrade'${NC}

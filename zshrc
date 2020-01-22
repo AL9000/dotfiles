@@ -1,13 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$HOME/.local/bin" 
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/alouest/.oh-my-zsh
+export ZSH=/home/jmr/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="wezm"
+ZSH_THEME="bira"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git django virtualenvwrapper mvn)
+plugins=(git django docker docker-compose virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,21 +83,38 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias sts="~/Softwares/sts-bundle/sts-3.8.3.RELEASE/STS"
-alias idea="~/Softwares/idea-IU-162.2032.8/bin/idea.sh"
-alias pycharm="~/Softwares/pycharm-2016.2.3/bin/pycharm.sh"
 
-# Virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+source ~/.local/bin/virtualenvwrapper.sh
 
-# Java
-export JAVA_HOME=/opt/jdk/jdk1.8.0_121
+eval "$(thefuck --alias)"
 
-# Maven
-export MAVEN_HOME=$HOME/Softwares/apache-maven-3.3.9
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This load$
 
-export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
 
-# Fuck
-eval $(thefuck --alias)
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
