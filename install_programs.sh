@@ -4,7 +4,7 @@
 red='\033[0;31m'
 blue='\033[0;34m'
 NC='\033[0m' # No Color
-programms="zsh terminator vim tree git curl gparted python3-pip" 
+programms="zsh terminator vim tree git curl gparted python3-pip python3.8-venv" 
 
 cd ~
 echo -e ${blue}'apt update & upgrade'${NC}
