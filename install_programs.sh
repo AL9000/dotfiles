@@ -4,7 +4,7 @@
 red='\033[0;31m'
 blue='\033[0;34m'
 NC='\033[0m' # No Color
-programms="zsh terminator vim tree git curl gparted" 
+programms="zsh terminator vim tree git curl gparted highlight"
 web_server_dependencies="python3-pip python3.8-venv build-essential libpq-dev libmariadbclient-dev zlib1g-dev libwebp-dev"
 
 cd ~
