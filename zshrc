@@ -51,7 +51,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose virtualenv)
+plugins=(git virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,11 +85,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dog="highlight -O ansi"
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+# source ~/.local/bin/virtualenvwrapper.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -116,8 +116,4 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-
-# added by travis gem
-[ ! -s /home/jmr/.travis/travis.sh ] || source /home/jmr/.travis/travis.sh
 
